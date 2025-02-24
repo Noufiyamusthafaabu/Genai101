@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saturn Facts</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #0ff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            transition: background-color 0.5s, color 0.5s;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px #0ff;
+        }
+        #fact {
+            font-size: 1.5em;
+            margin: 20px 0;
+            padding: 20px;
+            border: 2px solid #0ff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px #0ff;
+        }
+        button {
+            background-color: #0ff;
+            color: #000;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        button:hover {
+            background-color: #0cc;
+            transform: scale(1.1);
+        }
+        footer {
+            margin-top: 50px;
+            font-size: 0.8em;
+            color: #555;
+        }
+        .toggle-switch {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="toggle-switch" onclick="toggleTheme()">🌙</div>
+    <h1>Saturn Facts</h1>
+    <div id="fact">Click the button to learn a fact about Saturn!</div>
+    <button onclick="showRandomFact()">Show Fact</button>
+    <footer>
+        <p>Explore the wonders of our Solar System!</p>
+    </footer>
+    <script>
+        const facts = [
+            "Saturn is the sixth planet from the Sun and the second-largest in the Solar System.",
+            "Saturn is best known for its prominent ring system, which is made mostly of ice particles, with a smaller amount of rocky debris and dust.",
+            "A year on Saturn is equivalent to 29.5 Earth years.",
+            "Saturn has at least 83 moons, with Titan being the largest and the second-largest moon in the Solar System.",
+            "Saturn is a gas giant composed primarily of hydrogen and helium.",
+            "The planet's rings are named alphabetically in the order they were discovered, with the main rings being A, B, and C.",
+            "Saturn's magnetic field is weaker than Earth's but has a unique hexagonal storm at its north pole.",
+            "Saturn is the flattest planet in the Solar System due to its rapid rotation, which causes it to have an oblate shape.",
+            "The Cassini spacecraft, launched in 1997, provided detailed information about Saturn and its moons before ending its mission in 2017.",
+            "Saturn can be seen from Earth with the naked eye and was known to ancient civilizations."
+        ];
+
+        function showRandomFact() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            document.getElementById('fact').innerText = facts[randomIndex];
+        }
+
+        function toggleTheme() {
+            if (document.body.style.backgroundColor === 'black') {
+                document.body.style.backgroundColor = 'white';
+                document.body.style.color = 'black';
+            } else {
+                document.body.style.backgroundColor = 'black';
+                document.body.style.color = '#0ff';
+            }
+        }
+    </script>
+</body>
+</html>
